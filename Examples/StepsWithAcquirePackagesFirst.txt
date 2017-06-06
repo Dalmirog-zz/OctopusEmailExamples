@@ -1,0 +1,12 @@
+#{each step in Octopus.Step}
+  #{unless step.number}
+    <li>#{step | HtmlEscape} &mdash; <strong>#{step.Status.Code}</strong></li>
+  #{/unless}
+#{/each}
+#{each step in Octopus.Step}
+  #{if step.Status.Code}
+  	#{if step.number}
+    	<li>#{step | HtmlEscape} &mdash; <strong>#{step.Status.Code}</strong></li>
+    #{/if}
+  #{/if}
+#{/each}
